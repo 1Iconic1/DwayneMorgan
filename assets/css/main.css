@@ -4003,7 +4003,7 @@ input, select, textarea {
 	   }
 	   .popup-box .popup-body{
 		   padding: 15px;
-		   max-height: 300px;
+		   max-height: 600px;
 		   overflow-y: auto;
 	   }
 	   .popup-box .popup-body img{
