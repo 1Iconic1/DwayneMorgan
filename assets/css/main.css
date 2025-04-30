@@ -2572,7 +2572,7 @@ input, select, textarea {
 		}
 
 		.image.left, .image.right {
-			max-width: 40%;
+			max-width: 100%;
 		}
 
 			.image.left img, .image.right img {
@@ -3972,7 +3972,9 @@ input, select, textarea {
 	   }
 	   .popup-box .popup-content{
 		   background-color: #ffffff;
-		   width: 600px;
+		   width: 50%;           /* let it take 90% of the viewport */
+		   max-width: 900px;     /* but never wider than 900px */
+		   min-width: 400px; 
 		   position: absolute;
 		   left: 50%;
 		   top:50%;
