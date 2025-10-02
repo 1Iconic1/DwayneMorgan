@@ -7,9 +7,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Disable animations - force content visible */
+			.wrapper > .inner,
+			.wrapper.fade-up > .inner,
+			.wrapper.fade-down > .inner,
+			.wrapper.fade > .inner,
+			#sidebar > .inner,
+			#sidebar nav ul li,
+			.spotlights > section > .content > .inner,
+			.features section {
+				opacity: 1 !important;
+				transform: none !important;
+			}
+		</style>
 	</head>
 
-	<body class="is-preload">
+	<body>
 
 		<!-- Sidebar -->
 			<section id="sidebar">
@@ -306,13 +320,13 @@
 
 
 		<!-- Scripts -->
-			<script src="assets/js/blog-carousel.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/blog-carousel.js"></script>
 			<script src="assets/js/main.js"></script>
 	</body>
 </html>
