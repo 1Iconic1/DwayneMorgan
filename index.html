@@ -7,6 +7,89 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	
+		<style>
+			/* ── Tuka Carousel ── */
+			.tuka-carousel-wrap {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+				margin: 0 auto 1.5em;
+				max-width: 500px;
+			}
+			.tuka-carousel {
+				position: relative;
+				overflow: hidden;
+				flex: 1;
+				border-radius: 16px;
+				box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+			}
+			.tuka-track {
+				display: flex;
+				transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+			}
+			.tuka-track img {
+				min-width: 100%;
+				width: 100%;
+				display: block;
+				object-fit: cover;
+			}
+			/* Sleek outside arrows */
+			.tuka-btn {
+				flex-shrink: 0;
+				width: 38px;
+				height: 38px;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.08);
+				border: 1px solid rgba(255,255,255,0.2);
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: background 0.2s, border-color 0.2s;
+				padding: 0;
+			}
+			.tuka-btn:hover {
+				background: rgba(255,255,255,0.18);
+				border-color: rgba(255,255,255,0.4);
+			}
+			.tuka-btn svg {
+				width: 16px; height: 16px;
+				stroke: #fff;
+				fill: none;
+				stroke-width: 2;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+			.tuka-dots {
+				text-align: center;
+				padding: 0.75em 0 0;
+			}
+			.tuka-dots span {
+				display: inline-block;
+				width: 6px; height: 6px;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.3);
+				margin: 0 4px;
+				cursor: pointer;
+				transition: background 0.2s, transform 0.2s;
+			}
+			.tuka-dots span.active {
+				background: #fff;
+				transform: scale(1.4);
+			}
+			/* EcoGPT spotlight image fix */
+			.spotlights > section > .image {
+				background-size: cover !important;
+				background-position: center center !important;
+			}
+			.spotlights > section > .image img {
+				visibility: hidden;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		</style>
 	</head>
 
 	<body class="is-preload">
@@ -45,11 +128,31 @@
 
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
-							<p>Detailed project breakdowns.</p>
-							<ul class="actions">
-								<li><a href="https://drive.google.com/file/d/1vRtJwjWlv5vmZxyWF3y-5KJhs1Xlqgiw/view?usp=drive_link" class="button">Project Overviews</a></li>
-							</ul>
-						
+							<!-- The Circle: Tuka -->
+							<div class="features">
+								<section style="width: 100%;">
+									<h3>Tuka <span style="font-weight: normal; opacity: 0.7;">(formerly The Circle: Social Search)</span></h3>
+									<div class="tuka-carousel-wrap">
+										<button class="tuka-btn tuka-prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+										<div class="tuka-carousel">
+											<div class="tuka-track">
+												<img src="images/Tuka_1.PNG" alt="Tuka Screen 1" />
+												<img src="images/Tuka2.PNG" alt="Tuka Screen 2" />
+												<img src="images/Tuka_3.PNG" alt="Tuka Screen 3" />
+												<img src="images/Tuka_4.PNG" alt="Tuka Screen 4" />
+											</div>
+											<div class="tuka-dots"></div>
+										</div>
+										<button class="tuka-btn tuka-next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+									</div>
+									<p>Making information-seeking simple, not convoluted with ads and marketing.</p>
+									<ul class="actions">
+										<li><a href="https://www.thecirclesearch.com/" class="button">Join the waitlist</a></li>
+										<li><a href="https://testflight.apple.com/join/Tt1aABZ3" class="button">TestFlight Beta</a></li>
+									</ul>
+								</section>
+							</div>
+
 							<!--BLVSPs -->
 							<div class="features">
 								<section>
@@ -76,35 +179,18 @@
 								
 								</section>
 							</div>
-							<!--Reddit -->
-							<div class="features">
-								<section>
-									<h3>EcoGPT</h3>
-									<img src="images/EcoGPT.png" alt="" width="800" />
-									<div class="read-more-cont">
-										<div class="content">
-											<p>Our current method of interacting with LLMs is inherently flawed and unsustainable. GPT-3 was found to consume 500mls of water when producing 10-50 medium-length responses[4]. 
-												Imagine what the water consumption could look like in a day. This project seeks to apply direct manipulation in combination with sustainability research on eco-feedback technology to create a sustainable large language model interface. </p>
-											<div class="inner">
-												<a class="image">
-													<img src="images/User_Journey.png" alt="" data-position="right right"  />
-												</a>
-											</div>
-										</div>
-										
-										<p>Consider a scenario where a user desires to edit a particular section of their resume. 
-											It can be difficult to communicate the removal of a particular section or modifying its placement. "I want this section there."
-											Direct Manipulation allows for precise communication of intent.</p>
-										<a class="image">
-											<img src="images/direct_m.png" alt="" data-position="right center" />
-										</a>
-									</div>
-									<button class="btn" type="button">Read More</button>
+							<!-- Publications -->
+						<div class="features">
+							<section style="width: 100%;">
+								<h3>Publications</h3>
+								<p><strong>“It's trained by non-disabled people”: Evaluating How Image Quality Affects Product Captioning with Vision-Language Models</strong><br /> <em>ACM CHI 2026</em><br /><span style="font-size: 0.9em; opacity: 0.85;">CHI is the premier conference for Human-Computer Interaction</span></p>
+								<ul class="actions">
+									<li><a href="https://arxiv.org/abs/2511.08917" class="button">Read Paper</a></li>
+								</ul>
+							</section>
+						</div>
 
-								</section>
-							</div>
-
-							<!--Flyer Redesign -->
+						<!--Flyer Redesign -->
 							<!--
 							<div class="features">
 								<section>
@@ -151,14 +237,11 @@
 
 				<section id="one" class="wrapper style2 spotlights">
 						<section>
-							<a class="image"><img src="images/circle_logo.png" alt="" data-position="center center" /></a>
+							<a class="image"><img src="images/EcoGPT.png" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>The Circle: Social Search</h2>
-									<p> Making information-seeking simple, not convoluted with ads and marketing.</p>
-									<ul class="actions">
-										<li><a href="https://www.thecirclesearch.com/" class="button">Join the waitlist</a></li>
-									</ul>
+									<h2>EcoGPT</h2>
+									<p>Applying direct manipulation and eco-feedback principles to design a sustainable LLM interface that surfaces the environmental cost of AI interactions.</p>
 								</div>
 							</div>
 						</section>
@@ -326,5 +409,46 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/blog-carousel.js"></script>
 			<script src="assets/js/main.js"></script>
+	
+		<script>
+			(function () {
+				const wrap = document.querySelector('.tuka-carousel-wrap');
+				if (!wrap) return;
+				const carousel = wrap.querySelector('.tuka-carousel');
+				const track = carousel.querySelector('.tuka-track');
+				const imgs = track.querySelectorAll('img');
+				const dotsEl = carousel.querySelector('.tuka-dots');
+				const total = imgs.length;
+				let idx = 0;
+
+				// Build dots
+				imgs.forEach((_, i) => {
+					const d = document.createElement('span');
+					if (i === 0) d.classList.add('active');
+					d.addEventListener('click', () => go(i));
+					dotsEl.appendChild(d);
+				});
+
+				function go(n) {
+					idx = (n + total) % total;
+					track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+					dotsEl.querySelectorAll('span').forEach((d, i) =>
+						d.classList.toggle('active', i === idx));
+				}
+
+				wrap.querySelector('.tuka-prev').addEventListener('click', () => go(idx - 1));
+				wrap.querySelector('.tuka-next').addEventListener('click', () => go(idx + 1));
+
+				// Touch/swipe
+				let startX = null;
+				carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+				carousel.addEventListener('touchend', e => {
+					if (startX === null) return;
+					const diff = startX - e.changedTouches[0].clientX;
+					if (Math.abs(diff) > 40) go(idx + (diff > 0 ? 1 : -1));
+					startX = null;
+				}, { passive: true });
+			})();
+		</script>
 	</body>
 </html>
