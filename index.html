@@ -15,7 +15,7 @@
 				align-items: center;
 				gap: 1em;
 				margin: 0 auto 1.5em;
-				max-width: 500px;
+				max-width: 320px;
 			}
 			.tuka-carousel {
 				position: relative;
@@ -32,7 +32,8 @@
 				min-width: 100%;
 				width: 100%;
 				display: block;
-				object-fit: cover;
+				object-fit: contain;
+				max-height: 420px;
 			}
 			/* Sleek outside arrows */
 			.tuka-btn {
@@ -87,7 +88,7 @@
 				visibility: hidden;
 				width: 100%;
 				height: 100%;
-				object-fit: cover;
+				object-fit: contain;
 			}
 		</style>
 	</head>
@@ -183,9 +184,20 @@
 						<div class="features">
 							<section style="width: 100%;">
 								<h3>Publications</h3>
-								<p><strong>“It's trained by non-disabled people”: Evaluating How Image Quality Affects Product Captioning with Vision-Language Models</strong><br /> <em>ACM CHI 2026</em><br /><span style="font-size: 0.9em; opacity: 0.85;">CHI is the premier conference for Human-Computer Interaction</span></p>
+								<p><strong>“It's trained by non-disabled people”: Evaluating How Image Quality Affects Product Captioning with Vision-Language Models</strong><br /> <em>ACM CHI 2026</em> &mdash; <span style="color: #f0c040; font-weight: 600;">&#9733; Best Paper Honourable Mention (top 5% of accepted papers)</span><br /><span style="font-size: 0.9em; opacity: 0.85;">CHI is the premier conference for Human-Computer Interaction</span></p>
 								<ul class="actions">
 									<li><a href="https://arxiv.org/abs/2511.08917" class="button">Read Paper</a></li>
+								</ul>
+							</section>
+						</div>
+
+						<!-- Hold the Code Blog -->
+						<div class="features">
+							<section style="width: 100%;">
+								<h3>Hold the Code</h3>
+								<p>Writing about technology, accessibility, and the humans behind it all.</p>
+								<ul class="actions">
+									<li><a href="https://substack.com/@dwaynemorgan275314" class="button">Read on Substack</a></li>
 								</ul>
 							</section>
 						</div>
@@ -236,15 +248,6 @@
 				<!-- Two -->
 
 				<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a class="image"><img src="images/EcoGPT.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>EcoGPT</h2>
-									<p>Applying direct manipulation and eco-feedback principles to design a sustainable LLM interface that surfaces the environmental cost of AI interactions.</p>
-								</div>
-							</div>
-						</section>
 						<section>
 							<a class="image"><img src="images/SlackA11ly.png" alt="" data-position="center center" /></a>
 							<div class="content">
