@@ -1,0 +1,454 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	
+		<style>
+			/* ── Tuka Carousel ── */
+			.tuka-carousel-wrap {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+				margin: 0 auto 1.5em;
+				max-width: 500px;
+			}
+			.tuka-carousel {
+				position: relative;
+				overflow: hidden;
+				flex: 1;
+				border-radius: 16px;
+				box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+			}
+			.tuka-track {
+				display: flex;
+				transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+			}
+			.tuka-track img {
+				min-width: 100%;
+				width: 100%;
+				display: block;
+				object-fit: cover;
+			}
+			/* Sleek outside arrows */
+			.tuka-btn {
+				flex-shrink: 0;
+				width: 38px;
+				height: 38px;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.08);
+				border: 1px solid rgba(255,255,255,0.2);
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: background 0.2s, border-color 0.2s;
+				padding: 0;
+			}
+			.tuka-btn:hover {
+				background: rgba(255,255,255,0.18);
+				border-color: rgba(255,255,255,0.4);
+			}
+			.tuka-btn svg {
+				width: 16px; height: 16px;
+				stroke: #fff;
+				fill: none;
+				stroke-width: 2;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+			.tuka-dots {
+				text-align: center;
+				padding: 0.75em 0 0;
+			}
+			.tuka-dots span {
+				display: inline-block;
+				width: 6px; height: 6px;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.3);
+				margin: 0 4px;
+				cursor: pointer;
+				transition: background 0.2s, transform 0.2s;
+			}
+			.tuka-dots span.active {
+				background: #fff;
+				transform: scale(1.4);
+			}
+			/* EcoGPT spotlight image fix */
+			.spotlights > section > .image {
+				background-size: cover !important;
+				background-position: center center !important;
+			}
+			.spotlights > section > .image img {
+				visibility: hidden;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		</style>
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Intro</a></li>
+							<li><a href="#two">Research</a></li>
+							<li><a href="#one">Technical</a></li>
+							<li><a href="#three">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Dwayne Morgan</h1>
+							<ul class="icons">
+								<li><a href="https://github.com/1Iconic1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/dwayne-morgan-256267214/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<p> Behind every data point lies a person. Systems do not exist in isolation.</p>
+							<a class="image"><img src="images/portrait.png" alt="" data-position="center center" /></a>
+						</div>
+					</section>
+
+				<!-- One -->
+
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<!-- The Circle: Tuka -->
+							<div class="features">
+								<section style="width: 100%;">
+									<h3>Tuka <span style="font-weight: normal; opacity: 0.7;">(formerly The Circle: Social Search)</span></h3>
+									<div class="tuka-carousel-wrap">
+										<button class="tuka-btn tuka-prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+										<div class="tuka-carousel">
+											<div class="tuka-track">
+												<img src="images/Tuka_1.PNG" alt="Tuka Screen 1" />
+												<img src="images/Tuka2.PNG" alt="Tuka Screen 2" />
+												<img src="images/Tuka_3.PNG" alt="Tuka Screen 3" />
+												<img src="images/Tuka_4.PNG" alt="Tuka Screen 4" />
+											</div>
+											<div class="tuka-dots"></div>
+										</div>
+										<button class="tuka-btn tuka-next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+									</div>
+									<p>Making information-seeking simple, not convoluted with ads and marketing.</p>
+									<ul class="actions">
+										<li><a href="https://www.thecirclesearch.com/" class="button">Join the waitlist</a></li>
+										<li><a href="https://testflight.apple.com/join/Tt1aABZ3" class="button">TestFlight Beta</a></li>
+									</ul>
+								</section>
+							</div>
+
+							<!--BLVSPs -->
+							<div class="features">
+								<section>
+									<h3>Designing a community for Blind and low-vision software professionals(BLVSPs)</h3>
+									<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/6Sc3vnsJMs1a1FQKiiNjpz/BLVSPs-Wireframe?node-id=996726-1950&node-type=canvas&scaling=scale-down&content-scaling=fixed&page-id=996259%3A239&starting-point-node-id=996726%3A1950&share=1&embed-host=share" allowfullscreen></iframe>
+						
+									<div class="read-more-cont">
+										<p>In previous research, BLVSPs expressed distress with the lack of a centralized community for them to share and discover DIY tools, tips, and tricks for better accessible software development, my team and I surveyed and designed this platform to accomdate their considerations.</p>
+										<div class="content">
+											<div class="inner">
+												<a class="image">
+													<img src="images/engagement.png" alt="" data-position="right right"  />
+												</a>
+											</div>
+											<a class="image"><img src="images/Profile Page.png" alt="" data-position="center center" /></a>
+										</div>
+										<p>Users indicated a desire for community, hence our high fidelity design of a chat interface for each DIY tool posted. Currently, we are in the prototyping cycle and are iterating based on user feedback. Come back later for more pages!</p>
+										<a class="image">
+											<img src="images/CommentsPage.png" alt="" data-position="right center" />
+										</a>
+										
+									</div>
+			
+								
+								</section>
+							</div>
+							<!-- Publications -->
+						<div class="features">
+							<section style="width: 100%;">
+								<h3>Publications</h3>
+								<p><strong>“It's trained by non-disabled people”: Evaluating How Image Quality Affects Product Captioning with Vision-Language Models</strong><br /> <em>ACM CHI 2026</em><br /><span style="font-size: 0.9em; opacity: 0.85;">CHI is the premier conference for Human-Computer Interaction</span></p>
+								<ul class="actions">
+									<li><a href="https://arxiv.org/abs/2511.08917" class="button">Read Paper</a></li>
+								</ul>
+							</section>
+						</div>
+
+						<!--Flyer Redesign -->
+							<!--
+							<div class="features">
+								<section>
+								<h3>Design Snapshot </h3>
+								<img src="images/Overview.png" alt="" width="800" height ="450" />
+								<div class="read-more-cont">
+									<h3>Flyer Redesign </h3>
+									<div class="content">
+										<div class="inner">
+											<a class="image">
+												<img src="images/good2.png" alt="" data-position="right right"  />
+											</a>
+										</div>
+									</div>
+									</summary>
+									<p>Applied key design principles to enhance clarity and visual harmony by resolving alignment issues, introducing subtle yet impactful repetition for cohesion, and optimizing the use of negative space to create a more engaging and functional layout. </p>
+									<a class="image">
+										<img src="images/bad.png" alt="" data-position="right center" />
+									</a>
+
+								</div>
+		
+
+								</section>					
+								
+							</div>
+							-->
+							<!--
+							<div class="content">
+								<section>
+					
+									<h3>Tableau Data Dashboard</h3>
+									<a class="image"><img src="images/Dashboard 1.png" alt="" data-position="center center" /></a>
+
+									<p>Based on the Vlamis Challenge, this dashboard transforms data into insightful patterns given a dataset of company sale data. Each visualization represents a key trend(e.g. seasonal patterns or month-to-month sale differences).</p>
+		
+								</section>
+						
+							</div>
+							-->
+						</div>
+					</section>
+				<!-- Two -->
+
+				<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a class="image"><img src="images/EcoGPT.png" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>EcoGPT</h2>
+									<p>Applying direct manipulation and eco-feedback principles to design a sustainable LLM interface that surfaces the environmental cost of AI interactions.</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image"><img src="images/SlackA11ly.png" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>SlackA11y</h2>
+									<p> Currently researching sonification and end-user scripting in order to make sense making within chat applications(in this case Slack) more effective for blind users. </p>
+									<ul class="actions">
+										<li><a href="https://github.com/Accessibility-Research-Collective-UCI/slacka11ly" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image"><img src="images/minny.png" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Minerva</h2>
+									<p>Named after the goddess of Wisdom, "Minerva" is an innovative chatbot advisor utilizing Google Gemini, designed to enhance user interaction by leveraging a dynamic knowledge base of  user preferences and past interactions.
+										My team and I formulated strategies for data pruning and summarization to optimize storage with ChromaDB and retrieval processes, ensuring quick response times and relevance in user interactions.</p>
+									<ul class="actions">
+										<li><a href="https://github.com/kmcushing/Minerva" class="button">Project</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image"><img src="images/Cooking.png" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Cooking Voice-Assistant </h2>
+									<p>Implemented a variety of Natural Language Processing techniques such as preprocessing, parsing, regular expressions, and Frame-Theory in order to create a voice cooking assistant.</p>
+									<ul class="actions">
+										<li><a href="https://github.com/armrahim7/cs337-project3" class="button">Project</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<!--
+						<section>
+							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Topic Modeling(LDA)</h2>
+									<p></p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						-->
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Contact Me</h2>
+							<p>Feel free to reach out with any comments or suggestions!</p>
+							
+							<ul class="contact">
+								<li>
+									<h3>Email</h3>
+									<a href="#">dwaynem@uci.edu</a>
+								</li>
+								<li>
+									<h3>Phone</h3>
+									<span>(901) 485-7771</span>
+								</li>
+								<li>
+									<h3>Additional Links</h3>
+									<ul class="icons">
+										<li><a href="https://github.com/1Iconic1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://www.linkedin.com/in/dwayne-morgan-256267214/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+							<!--
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>12345 Somewhere Road #654<br />
+											Nashville, TN 00000-0000<br />
+											USA</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="#">dwaynem@uci.edu</a>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span>(901) 485-7771</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="https://github.com/1Iconic1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="https://www.linkedin.com/in/dwayne-morgan-256267214/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+					
+								</section>
+				
+							</div>
+							-->
+						</div>
+					</section>
+
+			</div>
+
+				<!-- read more popup box start -->
+			<div class="popup-box">
+				<div class="popup-content">
+					<div class="popup-header">
+					<h3></h3>
+					<span class="popup-close-icon">&times;</span>
+					</div>
+					<div class="popup-body">
+					
+					</div>
+					<div class="popup-footer">
+					<button class="btn popup-close-btn">Close</button>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-arrow carousel-arrow-left" id="prevButton">
+				<span class="arrow-left"></span>
+			</button>
+			<!-- read more popup box end -->
+		
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/blog-carousel.js"></script>
+			<script src="assets/js/main.js"></script>
+	
+		<script>
+			(function () {
+				const wrap = document.querySelector('.tuka-carousel-wrap');
+				if (!wrap) return;
+				const carousel = wrap.querySelector('.tuka-carousel');
+				const track = carousel.querySelector('.tuka-track');
+				const imgs = track.querySelectorAll('img');
+				const dotsEl = carousel.querySelector('.tuka-dots');
+				const total = imgs.length;
+				let idx = 0;
+
+				// Build dots
+				imgs.forEach((_, i) => {
+					const d = document.createElement('span');
+					if (i === 0) d.classList.add('active');
+					d.addEventListener('click', () => go(i));
+					dotsEl.appendChild(d);
+				});
+
+				function go(n) {
+					idx = (n + total) % total;
+					track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+					dotsEl.querySelectorAll('span').forEach((d, i) =>
+						d.classList.toggle('active', i === idx));
+				}
+
+				wrap.querySelector('.tuka-prev').addEventListener('click', () => go(idx - 1));
+				wrap.querySelector('.tuka-next').addEventListener('click', () => go(idx + 1));
+
+				// Touch/swipe
+				let startX = null;
+				carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+				carousel.addEventListener('touchend', e => {
+					if (startX === null) return;
+					const diff = startX - e.changedTouches[0].clientX;
+					if (Math.abs(diff) > 40) go(idx + (diff > 0 ? 1 : -1));
+					startX = null;
+				}, { passive: true });
+			})();
+		</script>
+	</body>
+</html>
