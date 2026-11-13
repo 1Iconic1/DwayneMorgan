@@ -1,102 +1,280 @@
 <!DOCTYPE HTML>
 
-<html>
+<html lang="en">
 	<head>
 		<title>Dwayne Morgan</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Dwayne Morgan — research in accessibility and human-computer interaction, and work experience at Tuka, Juni Learning and Backrs." />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	
+		<script>document.documentElement.className += ' js';</script>
+
 		<style>
-			/* ── Tuka Strip ── */
-			.tuka-strip {
-				display: flex;
-				gap: 0.75em;
-				margin: 0 auto 1.5em;
-				justify-content: center;
+			/* ══════════════════════════════════════════════
+			   Portfolio — main column
+			   Everything is namespaced under .pf so the
+			   sidebar and template styles are untouched.
+			   ══════════════════════════════════════════════ */
+			.pf {
+				--paper:  #f6f3ee;
+				--paper-2:#efeae2;
+				--card:   #ffffff;
+				--ink:    #17122b;
+				--ink-2:  #4a4560;
+				--ink-3:  #7a7590;
+				--line:   rgba(23,18,43,.10);
+				--purple: #4e2a84;
+				--purple-d:#2a1b4d;
+				--gold:   #b8893c;
+				--gold-l: #e8c98a;
+				--navy:   #061a35;
+				--cream:  #f6f8f7;
+				--serif: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+				--sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+				--radius: 22px;
+				--shadow: 0 1px 2px rgba(23,18,43,.05), 0 10px 30px -12px rgba(23,18,43,.18);
+				background: var(--paper);
+				color: var(--ink);
+				font-family: var(--sans);
+				line-height: 1.6;
+				-webkit-font-smoothing: antialiased;
 			}
-			.tuka-strip img {
-				flex: 1;
-				max-width: 160px;
-				max-height: 340px;
-				object-fit: contain;
-				border-radius: 14px;
-				box-shadow: 0 6px 24px rgba(0,0,0,0.3);
-				opacity: 0;
-				transform: translateY(24px);
-				transition: opacity 0.55s ease, transform 0.55s ease;
-			}
-			.tuka-strip img.tuka-visible {
-				opacity: 1;
-				transform: translateY(0);
-			}
-			/* ── Section labels ── */
-			.section-label {
-				text-align: center;
-				width: 100%;
-				display: block;
-				font-size: 0.7em;
-				font-weight: 700;
-				letter-spacing: 0.2em;
-				text-transform: uppercase;
-				opacity: 1;
-				color: #ffffff;
-				margin-bottom: 2em;
-			}
-
-			/* ── Section dividers ── */
-			#experience, #two, #one, #three {
-				border-top: 1px solid rgba(255,255,255,0.1);
-			}
-
-			/* ── Experience section cards ── */
-			#experience .features section {
-				border-left: 3px solid rgba(255,255,255,0.35);
-				background: rgba(255,255,255,0.04);
-				padding-left: 2em;
-			}
-			/* ── Experience logo cards ── */
-			.exp-header {
-				display: flex;
-				align-items: center;
-				gap: 1.25em;
-				margin-bottom: 0.75em;
-			}
-			.exp-logo {
-				width: 72px;
-				height: 72px;
-				object-fit: contain;
-				border-radius: 14px;
-				background: rgba(255,255,255,0.1);
-				padding: 10px;
-				flex-shrink: 0;
-			}
-			.exp-header h3 {
+			/* Do not set font-size on #wrapper itself: the template's 18em margin-left must keep matching the sidebar. */
+			.pf > section { font-size: 16px; }
+			.pf *, .pf *::before, .pf *::after { box-sizing: border-box; }
+			.pf h1, .pf h2, .pf h3, .pf h4 {
+				font-family: var(--serif);
+				color: inherit;
+				text-transform: none;
+				letter-spacing: -0.015em;
+				font-weight: 500;
+				line-height: 1.08;
 				margin: 0;
 			}
-			/* EcoGPT spotlight image fix */
-			.spotlights > section > .image {
-				background-size: cover !important;
-				background-position: center center !important;
+			.pf p { color: var(--ink-2); font-size: 1rem; line-height: 1.65; margin: 0; }
+			.pf ul { list-style: none; margin: 0; padding: 0; }
+			.pf li { margin: 0; padding: 0; }
+			.pf a { color: inherit; border-bottom: 0; text-decoration: none; }
+			.pf img { display: block; max-width: 100%; }
+			.pf figure { margin: 0; }
+			.pf a:focus-visible, .pf button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 8px; }
+
+			.pf-wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+			.pf-sec { padding: clamp(72px, 9vw, 128px) 0; position: relative; }
+			.pf-eyebrow {
+				font-family: var(--sans); font-size: .72rem; font-weight: 600; letter-spacing: .18em;
+				text-transform: uppercase; color: var(--ink-3);
 			}
-			.spotlights > section > .image img {
-				visibility: hidden;
-				width: 100%;
-				height: 100%;
-				object-fit: contain;
+			.pf-sec-head { display: flex; align-items: baseline; gap: 1.25rem; margin-bottom: clamp(36px, 5vw, 64px); }
+			.pf-sec-head .num { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--gold); }
+			.pf-sec-head h2 { font-size: clamp(2.4rem, 5.2vw, 4rem); }
+			.pf-sec-head::after { content: ''; flex: 1; height: 1px; background: var(--line); align-self: center; }
+
+			/* buttons */
+			.pf-btn {
+				display: inline-flex; align-items: center; gap: .55em;
+				font: 600 .86rem/1 var(--sans); letter-spacing: .01em;
+				padding: .95em 1.4em; border-radius: 999px;
+				background: var(--ink); color: #fff !important;
+				transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
 			}
-	
-			/* ── Name reveal animation ── */
-			@keyframes nameReveal {
-				0%   { opacity: 0; transform: translateY(18px); }
-				100% { opacity: 1; transform: translateY(0); }
+			.pf-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(23,18,43,.5); }
+			.pf-btn.ghost { background: transparent; color: var(--ink) !important; box-shadow: inset 0 0 0 1.5px var(--line); }
+			.pf-btn.ghost:hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
+			.pf-btn.gold { background: var(--gold-l); color: var(--navy) !important; }
+			.pf-btn.light { background: transparent; color: #fff !important; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.35); }
+			.pf-btn.light:hover { box-shadow: inset 0 0 0 1.5px #fff; }
+			.pf-btn i { font-size: .8em; }
+			.pf-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
+
+			/* scroll reveal (only when JS is present) */
+			.js .pf-reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+			.js .pf-reveal.in { opacity: 1; transform: none; }
+			@keyframes nameReveal { 0% { opacity: 0; transform: translateY(18px); } 100% { opacity: 1; transform: translateY(0); } }
+			.name-reveal { animation: nameReveal .9s cubic-bezier(.22,1,.36,1) both; animation-delay: .15s; }
+			@media (prefers-reduced-motion: reduce) {
+				.js .pf-reveal { opacity: 1; transform: none; transition: none; }
+				.name-reveal { animation: none; }
+				.pf-btn, .pf-tile, .pf-card { transition: none !important; }
 			}
-			.name-reveal {
-				animation: nameReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-				animation-delay: 0.15s;
+
+			/* ─────────── Intro ─────────── */
+			.pf-hero { padding: clamp(56px, 8vw, 104px) 0 clamp(40px, 5vw, 72px); background:
+				radial-gradient(900px 420px at 85% -10%, rgba(78,42,132,.10), transparent 60%), var(--paper); }
+			.pf-hero-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .8fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+			.pf-hero h1 { font-size: clamp(3.2rem, 8vw, 6.6rem); font-weight: 500; letter-spacing: -0.03em; line-height: .98; margin: 1.1rem 0 1.4rem; }
+			.pf-hero h1 em { font-style: italic; font-weight: 400; color: var(--purple); }
+			.pf-lede { font-family: var(--serif); font-size: clamp(1.25rem, 2.2vw, 1.65rem) !important; line-height: 1.35 !important; color: var(--ink) !important; max-width: 30ch; font-weight: 400; }
+			ul.pf-focus { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; }
+			.pf-focus li { font: 500 .78rem/1 var(--sans); padding: .6em 1em; border-radius: 999px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-2); }
+			.pf-social { display: flex; gap: .6rem; margin-top: 1.8rem; }
+			.pf-social a { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: #fff; font-size: 1.05rem; transition: transform .25s ease, background .25s ease; }
+			.pf-social a:hover { transform: translateY(-3px); background: var(--purple); }
+			.pf-portrait { position: relative; justify-self: end; width: min(100%, 360px); }
+			.pf-portrait::before { content: ''; position: absolute; inset: 18px -18px -18px 18px; border-radius: 30px; background: var(--purple); opacity: .92; }
+			.pf-portrait img { position: relative; width: 100%; aspect-ratio: 1 / 1.1; object-fit: cover; object-position: 50% 30%; border-radius: 30px; box-shadow: var(--shadow); }
+
+			/* logo wall */
+			.pf-wall { margin-top: clamp(44px, 6vw, 84px); }
+			.pf-wall-label { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.1rem; }
+			.pf-wall-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+			.pf-logos { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+			.pf-tile {
+				display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center;
+				background: var(--card); border-radius: 20px; padding: 22px 12px 16px; min-height: 176px;
+				box-shadow: inset 0 0 0 1px var(--line); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease;
 			}
-	</style>
+			.pf-tile:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px var(--line), var(--shadow); }
+			.pf-tile .mark { width: 88px; height: 88px; display: grid; place-items: center; }
+			.pf-tile .mark img { width: 100%; height: 100%; object-fit: contain; border-radius: 18px; }
+			.pf-tile .mark.round img { border-radius: 50%; }
+			.pf-tile .mark.type { font-family: var(--serif); font-size: 2.5rem; font-weight: 600; color: var(--purple); letter-spacing: -.03em; line-height: 1; flex-direction: column; }
+			.pf-tile .mark.type small { font: 600 .62rem/1 var(--sans); letter-spacing: .2em; color: var(--gold); margin-top: .35rem; }
+			.pf-tile b { display: block; font: 600 .84rem/1.2 var(--sans); color: var(--ink); margin-top: 14px; }
+			.pf-tile span { display: block; font: 500 .72rem/1.3 var(--sans); color: var(--ink-3); margin-top: 3px; }
+
+			/* ─────────── Experience: Tuka ─────────── */
+			.pf-tuka { background: var(--navy); color: var(--cream); border-radius: 32px; overflow: hidden; position: relative; isolation: isolate; }
+			.pf-tuka::before { content: ''; position: absolute; inset: 0; z-index: -1;
+				background: radial-gradient(700px 360px at 100% 0%, rgba(232,201,138,.16), transparent 60%), radial-gradient(600px 400px at 0% 100%, rgba(78,42,132,.35), transparent 65%); }
+			.pf-tuka p { color: rgba(246,248,247,.78); }
+			.pf-tuka-head { padding: clamp(28px, 5vw, 64px) clamp(24px, 5vw, 64px) 0; }
+			.pf-tuka-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }
+			.pf-tuka-mark { height: clamp(64px, 9vw, 104px); width: auto; filter: brightness(0) invert(1); }
+			.pf-tuka .pf-eyebrow { color: var(--gold-l); }
+			.pf-tuka h3 { font-size: clamp(2rem, 4.6vw, 3.6rem); margin: 2.2rem 0 1.2rem; max-width: 18ch; font-weight: 500; }
+			.pf-tuka h3 em { font-style: italic; color: var(--gold-l); font-weight: 400; }
+			.pf-tuka-head > p { max-width: 62ch; font-size: 1.08rem; }
+			.pf-prod { display: grid; gap: clamp(24px, 4vw, 56px); align-items: center; padding: clamp(32px, 5vw, 64px); border-top: 1px solid rgba(255,255,255,.10); margin-top: clamp(32px, 5vw, 56px); }
+			.pf-prod.p1 { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+			.pf-prod.p2 { grid-template-columns: minmax(0, .85fr) minmax(0, 1.3fr); }
+			.pf-prod .tag { display: inline-flex; align-items: center; gap: .6rem; font: 600 .72rem/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-l); margin-bottom: 1rem; }
+			.pf-prod .tag i { font-style: normal; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(232,201,138,.5); font-size: .7rem; letter-spacing: 0; }
+			.pf-prod h4 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin-bottom: .9rem; }
+			.pf-prod ul.points { margin-top: 1.1rem; display: grid; gap: .55rem; }
+			.pf-prod ul.points li { position: relative; padding-left: 1.5rem; color: rgba(246,248,247,.82); font-size: .96rem; }
+			.pf-prod ul.points li::before { content: ''; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--gold-l); }
+			.pf-prod .photo { border-radius: 22px; overflow: hidden; box-shadow: 0 30px 60px -28px rgba(0,0,0,.7); width: 100%; justify-self: center; }
+			.pf-prod .photo img { width: 100%; height: auto; aspect-ratio: 5 / 5; object-fit: cover; object-position: 50% 80%; }
+			.pf-phones { display: flex; justify-content: center; align-items: flex-start; gap: clamp(6px, 1vw, 14px); }
+			.pf-phones figure { flex: 0 1 200px; min-width: 0; }
+			.pf-phones figure:nth-child(2) { margin-top: 34px; }
+			.pf-phones img { width: 100%; height: auto; filter: drop-shadow(0 24px 30px rgba(0,0,0,.45)); }
+			.pf-phones .shot { background: #0c0c10; padding: 6px; border-radius: 32px; box-shadow: 0 24px 40px -20px rgba(0,0,0,.7), inset 0 0 0 1.5px #2a2a33; }
+			.pf-phones .shot img { border-radius: 27px; filter: none; }
+			.pf-phones figcaption { text-align: center; margin-top: 12px; font: 500 .72rem/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: rgba(246,248,247,.55); }
+
+			.pf-clients { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 0 clamp(24px, 5vw, 64px) clamp(24px, 5vw, 64px); }
+			.pf-client { position: relative; border-radius: 24px; overflow: hidden; min-height: 360px; display: flex; flex-direction: column; justify-content: flex-end; padding: 26px; background: #0b2447; isolation: isolate; }
+			.pf-client > img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1.2s cubic-bezier(.22,1,.36,1); }
+			.pf-client:hover > img.bg { transform: scale(1.05); }
+			.pf-client::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(6,26,53,0) 30%, rgba(6,26,53,.88) 100%); }
+			.pf-client .badge { position: absolute; top: 20px; left: 20px; width: 112px; height: 112px; border-radius: 24px; background: #fff; display: grid; place-items: center; padding: 14px; box-shadow: 0 14px 30px -12px rgba(0,0,0,.5); }
+			.pf-client .badge img { width: 100%; height: 100%; object-fit: contain; }
+			.pf-client .live { position: absolute; top: 24px; right: 22px; font: 600 .66rem/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #fff; background: rgba(6,26,53,.55); backdrop-filter: blur(8px); padding: .65em 1em; border-radius: 999px; display: inline-flex; align-items: center; gap: .55em; }
+			.pf-client .live::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #5de2a0; box-shadow: 0 0 0 3px rgba(93,226,160,.25); }
+			.pf-client h4 { font-size: 1.7rem; color: #fff; }
+			.pf-client p { color: rgba(255,255,255,.82); font-size: .95rem; margin-top: .4rem; max-width: 36ch; }
+
+			.pf-origin { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(20px, 4vw, 56px); align-items: center; padding: clamp(28px, 4vw, 48px) clamp(24px, 5vw, 64px); background: rgba(255,255,255,.04); border-top: 1px solid rgba(255,255,255,.10); }
+			.pf-origin h4 { font-size: 1.5rem; margin: .5rem 0 .6rem; }
+			.pf-origin .strip { display: flex; gap: 10px; }
+			.pf-origin .strip img { width: clamp(64px, 8vw, 92px); aspect-ratio: 1242 / 2688; object-fit: cover; border-radius: 14px; box-shadow: 0 14px 28px -14px rgba(0,0,0,.7); }
+			.pf-origin .strip img:nth-child(2) { transform: translateY(14px); }
+
+			/* roles */
+			.pf-roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+			.pf-card { background: var(--card); border-radius: var(--radius); padding: clamp(24px, 3vw, 36px); box-shadow: inset 0 0 0 1px var(--line); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease; }
+			.pf-card:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1px var(--line), var(--shadow); }
+			.pf-role-top { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.4rem; }
+			.pf-role-logo { width: 96px; height: 96px; flex: none; border-radius: 22px; object-fit: contain; box-shadow: inset 0 0 0 1px var(--line); }
+			.pf-role h3 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+			.pf-role .title { font: 600 .9rem/1.3 var(--sans); color: var(--purple); margin-top: .35rem; }
+			.pf-pill { display: inline-block; font: 600 .7rem/1 var(--sans); letter-spacing: .06em; padding: .6em 1em; border-radius: 999px; background: var(--paper-2); color: var(--ink-2); margin-bottom: 1rem; font-variant-numeric: tabular-nums; }
+
+			/* ─────────── Research ─────────── */
+			.pf-chi { position: relative; border-radius: 32px; overflow: hidden; color: #fff; isolation: isolate;
+				background: radial-gradient(600px 300px at 90% 0%, rgba(232,201,138,.22), transparent 60%), linear-gradient(135deg, var(--purple-d), var(--purple)); }
+			.pf-chi-grid { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; padding: clamp(28px, 5vw, 60px); }
+			.pf-chi-emblem { width: clamp(130px, 17vw, 200px); aspect-ratio: 1; border-radius: 50%; background: #fff; color: var(--purple); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--serif); box-shadow: 0 0 0 8px rgba(255,255,255,.14); }
+			.pf-chi-emblem b { color: var(--purple); font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 600; letter-spacing: -.04em; line-height: 1; }
+			.pf-chi-emblem small { font: 700 .72rem/1 var(--sans); letter-spacing: .22em; color: var(--gold); margin-top: .5rem; }
+			.pf-chi .award { display: inline-flex; align-items: center; gap: .6rem; font: 600 .74rem/1.35 var(--sans); letter-spacing: .1em; text-transform: uppercase; padding: .75em 1.2em; border-radius: 20px; background: var(--gold-l); color: #2a1b00; }
+			.pf-chi h3 { font-size: clamp(1.5rem, 3vw, 2.3rem); margin: 1.1rem 0 .9rem; font-weight: 500; line-height: 1.15; }
+			.pf-chi p { color: rgba(255,255,255,.8); }
+			.pf-chi .venue { font-style: italic; font-family: var(--serif); font-size: 1.1rem; color: #fff; }
+
+			.pf-study { margin-top: 16px; background: var(--card); border-radius: 32px; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+			.pf-study-head { padding: clamp(28px, 4vw, 52px) clamp(24px, 4vw, 52px) 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(20px, 4vw, 56px); align-items: end; }
+			.pf-study-head h3 { font-size: clamp(1.7rem, 3.4vw, 2.7rem); margin-top: .8rem; }
+			.pf-study-head h3 em { font-style: italic; color: var(--purple); font-weight: 400; }
+			.pf-frame { margin: clamp(24px, 3vw, 40px) clamp(24px, 4vw, 52px) 0; border-radius: 16px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--line), var(--shadow); background: var(--paper-2); }
+			.pf-frame .bar { display: flex; align-items: center; gap: 6px; padding: 12px 16px; background: var(--paper-2); border-bottom: 1px solid var(--line); }
+			.pf-frame .bar i { width: 10px; height: 10px; border-radius: 50%; background: #d6d0c4; }
+			.pf-frame .bar span { margin-left: 10px; font: 500 .72rem/1 var(--sans); color: var(--ink-3); }
+			.pf-frame iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #fff; }
+			.pf-shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding: clamp(24px, 3vw, 40px) clamp(24px, 4vw, 52px) clamp(28px, 4vw, 52px); }
+			.pf-shots figure { background: var(--paper-2); border-radius: 14px; padding: 10px; box-shadow: inset 0 0 0 1px var(--line); }
+			.pf-shots img { width: 100%; height: auto; border-radius: 8px; }
+			.pf-shots figcaption { font: 500 .74rem/1.3 var(--sans); color: var(--ink-3); padding: 10px 4px 2px; }
+			.pf-study-body { padding: 0 clamp(24px, 4vw, 52px) clamp(28px, 4vw, 52px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 4vw, 48px); }
+
+			.pf-minis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+			.pf-mini { display: flex; flex-direction: column; }
+			.pf-mini .thumb { border-radius: 14px; overflow: hidden; background: var(--paper-2); margin-bottom: 1.2rem; aspect-ratio: 16 / 8; }
+			.pf-mini .thumb img { width: 100%; height: 100%; object-fit: cover; }
+			.pf-mini h3 { font-size: 1.6rem; margin-bottom: .7rem; }
+			.pf-mini p { flex: 1; font-size: .96rem; }
+			.pf-mini .pf-btn { align-self: flex-start; }
+			.pf-write { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }
+			.pf-write h3 { font-size: 1.7rem; margin: .5rem 0 .4rem; }
+			.pf-write p { max-width: 52ch; }
+
+			/* ─────────── Contact ─────────── */
+			.pf-contact { background: var(--ink); color: #fff; padding: clamp(80px, 10vw, 140px) 0 clamp(36px, 4vw, 56px); position: relative; overflow: hidden; }
+			.pf-contact::before { content: ''; position: absolute; width: 560px; height: 560px; right: -160px; top: -220px; border-radius: 50%; background: radial-gradient(circle, rgba(94,66,166,.55), transparent 70%); }
+			.pf-contact .pf-eyebrow { color: var(--gold-l); }
+			.pf-contact h2 { font-size: clamp(3rem, 8vw, 6.2rem); letter-spacing: -.03em; margin: 1rem 0 1.2rem; position: relative; }
+			.pf-contact h2 em { font-style: italic; font-weight: 400; color: var(--gold-l); }
+			.pf-contact p { color: rgba(255,255,255,.7); max-width: 42ch; font-size: 1.1rem; position: relative; }
+			.pf-mail { display: inline-block; margin-top: 2rem; font-family: var(--serif); font-size: clamp(1.5rem, 4vw, 2.6rem); border-bottom: 2px solid var(--gold-l) !important; padding-bottom: .15em; position: relative; word-break: break-word; transition: color .25s ease; }
+			.pf-mail:hover { color: var(--gold-l); }
+			.pf-contact-row { display: flex; flex-wrap: wrap; gap: 2.5rem 4rem; margin-top: clamp(48px, 6vw, 80px); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.14); position: relative; }
+			.pf-contact-row .lbl { font: 600 .7rem/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: .7rem; }
+			.pf-contact-row span.v, .pf-contact-row a.v { font-size: 1.05rem; color: #fff; }
+			.pf-contact .pf-social a { background: rgba(255,255,255,.1); }
+			.pf-contact .pf-social a:hover { background: var(--purple); }
+			p.pf-foot { margin-top: clamp(48px, 6vw, 80px); font-size: .78rem; color: rgba(255,255,255,.4) !important; position: relative; }
+
+			/* ─────────── Responsive ─────────── */
+			@media (max-width: 1100px) {
+				.pf-logos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+			}
+			@media (max-width: 900px) {
+				.pf-hero-grid { grid-template-columns: 1fr; }
+				.pf-portrait { justify-self: start; width: min(78%, 320px); margin-right: 18px; }
+				.pf-prod.p1, .pf-prod.p2 { grid-template-columns: 1fr; }
+				.pf-prod.p2 .pf-phones { order: 2; }
+				.pf-roles, .pf-minis, .pf-clients, .pf-study-body, .pf-study-head { grid-template-columns: 1fr; }
+				.pf-origin { grid-template-columns: 1fr; }
+				.pf-origin .strip { justify-content: flex-start; }
+			}
+			@media (max-width: 640px) {
+				.pf-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+				.pf-tile { min-height: 160px; }
+				.pf-chi-grid { grid-template-columns: 1fr; }
+				.pf-shots { grid-template-columns: 1fr; }
+				.pf-phones figure:nth-child(2) { margin-top: 22px; }
+				.pf-client { min-height: 320px; }
+				.pf-client .badge { width: 92px; height: 92px; }
+				.pf-role-logo { width: 76px; height: 76px; }
+				.pf-sec-head { gap: .8rem; }
+			}
+		</style>
 	</head>
 
 	<body class="is-preload">
@@ -108,8 +286,7 @@
 						<ul>
 							<li><a href="#intro">Intro</a></li>
 							<li><a href="#experience">Experience</a></li>
-						<li><a href="#two">Research</a></li>
-							<li><a href="#one">Technical</a></li>
+							<li><a href="#two">Research</a></li>
 							<li><a href="#three">Contact</a></li>
 						</ul>
 					</nav>
@@ -117,330 +294,289 @@
 			</section>
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" class="pf">
 
 				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1 class="name-reveal">Dwayne Morgan</h1>
-							<ul class="icons">
-								<li><a href="https://github.com/1Iconic1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="https://www.linkedin.com/in/dwayne-morgan-256267214/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<p> Behind every data point lies a person. Systems do not exist in isolation.</p>
-							<a class="image"><img src="images/portrait.png" alt="" data-position="center center" /></a>
+					<section id="intro" class="pf-hero">
+						<div class="pf-wrap">
+							<div class="pf-hero-grid">
+								<div>
+									<span class="pf-eyebrow">Research &amp; experience</span>
+									<h1 class="name-reveal">Dwayne <em>Morgan</em></h1>
+									<p class="pf-lede">Behind every data point lies a person. Systems do not exist in isolation.</p>
+									<ul class="pf-focus" aria-label="Focus areas">
+										<li>Accessibility research</li>
+										<li>Human-computer interaction</li>
+										<li>Software &amp; teaching</li>
+									</ul>
+									<div class="pf-social">
+										<a href="https://github.com/1Iconic1" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+										<a href="https://www.linkedin.com/in/dwayne-morgan-256267214/" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+									</div>
+								</div>
+								<figure class="pf-portrait">
+									<img src="images/portrait.png" alt="Dwayne Morgan in graduation regalia at Northwestern University" />
+								</figure>
+							</div>
+
+							<div class="pf-wall pf-reveal">
+								<div class="pf-wall-label"><span class="pf-eyebrow">Companies, clients &amp; venues</span></div>
+								<ul class="pf-logos">
+									<li><a class="pf-tile" href="#tuka">
+										<span class="mark"><img src="images/Tuka_logo.png" alt="Tuka" /></span>
+										<span><b>Tuka</b><span>Experience</span></span>
+									</a></li>
+									<li><a class="pf-tile" href="#clients">
+										<span class="mark round"><img src="images/Tuka_hotel/hotel-zachary-logo.webp" alt="Hotel Zachary, Chicago" /></span>
+										<span><b>Hotel Zachary</b><span>Tuka client</span></span>
+									</a></li>
+									<li><a class="pf-tile" href="#clients">
+										<span class="mark"><img src="images/Tuka_hotel/graduate-evanston-logo.png" alt="Graduate Evanston" /></span>
+										<span><b>Graduate Evanston</b><span>Tuka client</span></span>
+									</a></li>
+									<li><a class="pf-tile" href="#juni">
+										<span class="mark round"><img src="images/juni_learning.png" alt="Juni Learning" /></span>
+										<span><b>Juni Learning</b><span>CS instructor</span></span>
+									</a></li>
+									<li><a class="pf-tile" href="#backrs">
+										<span class="mark"><img src="images/backrs_logo.png" alt="Backrs" /></span>
+										<span><b>Backrs</b><span>QA intern &amp; coach</span></span>
+									</a></li>
+									<li><a class="pf-tile" href="#chi">
+										<span class="mark type" aria-label="ACM CHI 2026">CHI<small>2026</small></span>
+										<span><b>ACM CHI</b><span>Publication</span></span>
+									</a></li>
+								</ul>
+							</div>
 						</div>
 					</section>
 
 				<!-- Experience -->
+					<section id="experience" class="pf-sec">
+						<div class="pf-wrap">
+							<div class="pf-sec-head pf-reveal"><span class="num">01</span><h2>Experience</h2></div>
 
-					<section id="experience" class="wrapper style3 fade-up">
-						<div class="inner">
-							<span class="section-label">Experience</span>
-							<!-- The Circle: Tuka -->
-							<div class="features">
-								<section style="width: 100%;">
-									<div class="exp-header">
-										<img src="images/Tuka_logo.png" alt="Tuka" class="exp-logo" />
-										<h3>Tuka <span style="font-weight: normal; opacity: 0.7;">(formerly The Circle: Social Search)</span></h3>
+							<!-- Tuka -->
+							<article id="tuka" class="pf-tuka pf-reveal">
+								<div class="pf-tuka-head">
+									<div class="pf-tuka-top">
+										<img class="pf-tuka-mark" src="images/Tuka_hotel/tuka-wordmark.png" alt="Tuka" />
+										<span class="pf-eyebrow">Formerly The Circle: Social Search</span>
 									</div>
-									<div class="tuka-strip">
-										<img src="images/Tuka_images/welcome.jpg" alt="Tuka Welcome" />
-										<img src="images/Tuka_images/searcb.jpg" alt="Tuka Search" />
-										<img src="images/Tuka_images/collections.jpg" alt="Tuka Collections" />
-										<img src="images/Tuka_images/maps.jpg" alt="Tuka Maps" />
-										<img src="images/Tuka_images/activity.jpg" alt="Tuka Activity" />
+									<h3>A local guide in every <em>guest's</em> hands.</h3>
+									<p>Tuka began as a consumer app for finding information without the noise of ads and marketing. It has since shifted to hotels, pairing smart software with a simple front-desk device so every guest gets curated, locally vetted recommendations, and the hotel sees what guests search for, visit and love.</p>
+									<div class="pf-actions">
+										<a class="pf-btn gold" href="https://tuka.world">Visit tuka.world <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 									</div>
-									<p>Making information-seeking simple, not convoluted with ads and marketing.</p>
-									<ul class="actions">
-										<li><a href="https://substack.com/@tukaapp" class="button">Stay Connected</a></li>
-										<li><a href="https://apps.apple.com/us/app/tuka/id6753150548" class="button">Download on the App Store</a></li>
-									</ul>
-								</section>
-							</div>
-
-							<!-- Juni Learning -->
-							<div class="features">
-								<section style="width: 100%;">
-									<div class="exp-header">
-										<img src="images/juni_learning.png" alt="Juni Learning" class="exp-logo" />
-										<h3>Juni Learning &mdash; Computer Science Instructor</h3>
-									</div>
-									<p>Oct 2023 &ndash; Mar 2025. Taught 20+ students algorithms, data structures, and Python game programming using PyGame &mdash; from foundational sorting to building interactive 2D games from scratch.</p>
-								</section>
-							</div>
-							<!-- Backrs -->
-							<div class="features">
-								<section style="width: 100%;">
-									<div class="exp-header">
-										<img src="images/backrs_logo.png" alt="Backrs" class="exp-logo" />
-										<h3>Backrs &mdash; QA Intern &amp; Coach</h3>
-									</div>
-									<p>QA Intern (Nov 2022 &ndash; Feb 2023) and current Coach. Developed and executed unit tests to ensure software quality, and now guide students through the college and graduate application process.</p>
-								</section>
-							</div>
-						</div>
-					</section>
-
-				<!-- One -->
-
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-
-							<span class="section-label">Research</span>
-							<!--BLVSPs -->
-							<div class="features">
-								<section>
-									<h3>Designing a community for Blind and low-vision software professionals(BLVSPs)</h3>
-									<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/6Sc3vnsJMs1a1FQKiiNjpz/BLVSPs-Wireframe?node-id=996726-1950&node-type=canvas&scaling=scale-down&content-scaling=fixed&page-id=996259%3A239&starting-point-node-id=996726%3A1950&share=1&embed-host=share" allowfullscreen></iframe>
-						
-									<div class="read-more-cont">
-										<p>In previous research, BLVSPs expressed distress with the lack of a centralized community for them to share and discover DIY tools, tips, and tricks for better accessible software development, my team and I surveyed and designed this platform to accomdate their considerations.</p>
-										<div class="content">
-											<div class="inner">
-												<a class="image">
-													<img src="images/engagement.png" alt="" data-position="right right"  />
-												</a>
-											</div>
-											<a class="image"><img src="images/Profile Page.png" alt="" data-position="center center" /></a>
-										</div>
-										<p>Users indicated a desire for community, hence our high fidelity design of a chat interface for each DIY tool posted. Currently, we are in the prototyping cycle and are iterating based on user feedback. Come back later for more pages!</p>
-										<a class="image">
-											<img src="images/CommentsPage.png" alt="" data-position="right center" />
-										</a>
-										
-									</div>
-			
-								
-								</section>
-							</div>
-							<!-- Publications -->
-						<div class="features">
-							<section style="width: 100%;">
-								<h3>Publications</h3>
-								<p><strong>“It's trained by non-disabled people”: Evaluating How Image Quality Affects Product Captioning with Vision-Language Models</strong><br /> <em>ACM CHI 2026</em> &mdash; <span style="color: #f0c040; font-weight: 600;">Best Paper Honourable Mention (top 5% of accepted papers)</span><br /><span style="font-size: 0.9em; opacity: 0.85;">CHI is the premier conference for Human-Computer Interaction</span></p>
-								<ul class="actions">
-									<li><a href="https://arxiv.org/abs/2511.08917" class="button">Read Paper</a></li>
-								</ul>
-							</section>
-						</div>
-
-						<!-- Hold the Code Blog -->
-						<div class="features">
-							<section style="width: 100%;">
-								<h3>Hold the Code</h3>
-								<p>Writing about technology, accessibility, and the humans behind it all.</p>
-								<ul class="actions">
-									<li><a href="https://substack.com/@dwaynemorgan275314" class="button">Read on Substack</a></li>
-								</ul>
-							</section>
-						</div>
-
-						<!--Flyer Redesign -->
-							<!--
-							<div class="features">
-								<section>
-								<h3>Design Snapshot </h3>
-								<img src="images/Overview.png" alt="" width="800" height ="450" />
-								<div class="read-more-cont">
-									<h3>Flyer Redesign </h3>
-									<div class="content">
-										<div class="inner">
-											<a class="image">
-												<img src="images/good2.png" alt="" data-position="right right"  />
-											</a>
-										</div>
-									</div>
-									</summary>
-									<p>Applied key design principles to enhance clarity and visual harmony by resolving alignment issues, introducing subtle yet impactful repetition for cohesion, and optimizing the use of negative space to create a more engaging and functional layout. </p>
-									<a class="image">
-										<img src="images/bad.png" alt="" data-position="right center" />
-									</a>
-
 								</div>
-		
 
-								</section>					
-								
-							</div>
-							-->
-							<!--
-							<div class="content">
-								<section>
-					
-									<h3>Tableau Data Dashboard</h3>
-									<a class="image"><img src="images/Dashboard 1.png" alt="" data-position="center center" /></a>
-
-									<p>Based on the Vlamis Challenge, this dashboard transforms data into insightful patterns given a dataset of company sale data. Each visualization represents a key trend(e.g. seasonal patterns or month-to-month sale differences).</p>
-		
-								</section>
-						
-							</div>
-							-->
-						</div>
-					</section>
-				<!-- Two -->
-
-				<section id="one" class="wrapper style2 spotlights">
-						<div style="padding: 2em 5em 0;">
-							<span class="section-label">Technical Projects</span>
-						</div>
-						<section>
-							<a class="image"><img src="images/SlackA11ly.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>SlackA11y</h2>
-									<p> Currently researching sonification and end-user scripting in order to make sense making within chat applications(in this case Slack) more effective for blind users. </p>
-									<ul class="actions">
-										<li><a href="https://github.com/Accessibility-Research-Collective-UCI/slacka11ly" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a class="image"><img src="images/minny.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Minerva</h2>
-									<p>Named after the goddess of Wisdom, "Minerva" is an innovative chatbot advisor utilizing Google Gemini, designed to enhance user interaction by leveraging a dynamic knowledge base of  user preferences and past interactions.
-										My team and I formulated strategies for data pruning and summarization to optimize storage with ChromaDB and retrieval processes, ensuring quick response times and relevance in user interactions.</p>
-									<ul class="actions">
-										<li><a href="https://github.com/kmcushing/Minerva" class="button">Project</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a class="image"><img src="images/Cooking.png" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Cooking Voice-Assistant </h2>
-									<p>Implemented a variety of Natural Language Processing techniques such as preprocessing, parsing, regular expressions, and Frame-Theory in order to create a voice cooking assistant.</p>
-									<ul class="actions">
-										<li><a href="https://github.com/armrahim7/cs337-project3" class="button">Project</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a class="image"><img src="images/2D_platformer_SunnyLand.png" alt="PyGame Research Games" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>PyGame Research Games</h2>
-									<p>Designed and built 2D games in <strong>Python</strong> using <strong>PyGame</strong> for behavioral research experiments, covering player mechanics, collision detection, and event logging. Produced custom game assets in <strong>Autodesk Maya</strong> and <strong>LibreSprite</strong>, and taught game programming to 20+ students over 1.5 years. Experienced with cross-platform game frameworks including <strong>Godot</strong>, <strong>Defold</strong>, <strong>Solar2D</strong>, <strong>MonoGame</strong>, <strong>libGDX</strong>, and <strong>Cocos2d-x</strong>. Primary development environment: <strong>PyCharm</strong>.</p>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a class="image"><img src="images/EEG_Sensor_Data.jpeg" alt="Medical Research Visual Data" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Medical Research Visual Data</h2>
-									<p>Worked in the HABits Lab researching how eating behaviors can be predicted from sensor data. Used <strong>Python</strong> to process and visualize <strong>EEG</strong> and physiological signals via <strong>MNE-Python</strong> and <strong>EEGLAB</strong>, applying signal processing and data analysis techniques to surface patterns linking sensor readings to real-world behavioral outcomes.</p>
-								</div>
-							</div>
-						</section>
-						<section>
-							<div class="image" style="overflow:hidden;">
-								<video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-									<source src="images/audi.mp4.mov" type="video/mp4" />
-								</video>
-							</div>
-							<div class="content">
-								<div class="inner">
-									<h2>3D Modeling for Research</h2>
-									<p>Developed 3D models and scientific visualizations using <strong>Python</strong> (<strong>NumPy</strong>, <strong>Matplotlib</strong>, <strong>VTK</strong>) for academic research, alongside producing game-ready assets in <strong>Autodesk Maya</strong>. Experienced with 3D engines and rendering pipelines including <strong>Panda3D</strong>, <strong>O3DE</strong>, and <strong>Stride</strong> &mdash; bridging scientific visualization and interactive media.</p>
-									<ul class="actions">
-										<li><a href="images/Modeling_Final Project.pdf" class="button" target="_blank">View PDF</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Contact Me</h2>
-							<p>Feel free to reach out with any comments or suggestions!</p>
-							
-							<ul class="contact">
-								<li>
-									<h3>Email</h3>
-									<a href="#">dwaynem@uci.edu</a>
-								</li>
-								<li>
-									<h3>Phone</h3>
-									<span>(901) 485-7771</span>
-								</li>
-								<li>
-									<h3>Additional Links</h3>
-									<ul class="icons">
-										<li><a href="https://github.com/1Iconic1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="https://www.linkedin.com/in/dwayne-morgan-256267214/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-									</ul>
-								</li>
-							</ul>
-							<!--
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
+								<!-- Product 1 -->
+								<div class="pf-prod p1">
+									<figure class="photo">
+										<img src="images/Tuka_hotel/tap-desk.webp" width="768" height="1376" loading="lazy" alt="A guest taps a phone on the Tuka device at a marble hotel front desk" />
+									</figure>
+									<div>
+										<span class="tag"><i>1</i> Product one</span>
+										<h4>Tuka for Hotels</h4>
+										<p>A device at the front desk gives every guest an instant, app-free way into the hotel's digital concierge. One tap on the phone opens a local guide for the hotel's neighborhood.</p>
+										<ul class="points">
+											<li>Tap the device, ask in plain words, receive local recommendations</li>
+											<li>No app to download, with instant access</li>
+											<li>Hotel teams see what guests search for, how they get there and what performs</li>
 										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">dwaynem@uci.edu</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(901) 485-7771</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://github.com/1Iconic1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="https://www.linkedin.com/in/dwayne-morgan-256267214/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-					
-								</section>
-				
+									</div>
+								</div>
+
+								<!-- Product 2 -->
+								<div class="pf-prod p2">
+									<div>
+										<span class="tag"><i>2</i> Product two</span>
+										<h4>The guest app, with Thea</h4>
+										<p>The second product is the guest-facing experience itself. Guests open the hotel's page, ask Thea, the concierge, what they feel like doing, and get answers that start with what is closest to their room.</p>
+										<ul class="points">
+											<li>"Discover Chicago the way locals do": search, or tap a category</li>
+											<li>Recommendations with walking times, booking and directions</li>
+											<li>A map of local picks and a saved trip</li>
+										</ul>
+									</div>
+									<div class="pf-phones">
+										<figure>
+											<div class="shot"><img src="images/Tuka_hotel/hotel-zachary-guest-home.webp" width="780" height="1688" loading="lazy" alt="Hotel Zachary guest page: Discover Chicago the way locals do, with a search box for Thea, the concierge" /></div>
+											<figcaption>Ask</figcaption>
+										</figure>
+										<figure>
+											<img src="images/Tuka_hotel/screen-chat.webp" width="954" height="2000" loading="lazy" alt="Thea recommends a breakfast spot inside the hotel with Book a table and Directions buttons" />
+											<figcaption>Receive</figcaption>
+										</figure>
+										<figure>
+											<img src="images/Tuka_hotel/screen-explore.webp" width="954" height="2000" loading="lazy" alt="A map of walkable local recommendations with category filters" />
+											<figcaption>Explore</figcaption>
+										</figure>
+									</div>
+								</div>
+
+								<!-- Clients -->
+								<div id="clients" class="pf-clients">
+									<div class="pf-client">
+										<img class="bg" src="images/Tuka_hotel/hotel-zachary-exterior.webp" loading="lazy" alt="Hotel Zachary at dusk, facing the plaza at Gallagher Way" />
+										<span class="live">Live</span>
+										<span class="badge"><img src="images/Tuka_hotel/hotel-zachary-logo.webp" alt="Hotel Zachary, Chicago" /></span>
+										<h4>Hotel Zachary</h4>
+										<p>A boutique hotel across from Wrigley Field, part of Marriott's Tribute Portfolio. Chicago.</p>
+									</div>
+									<div class="pf-client">
+										<img class="bg" src="images/Tuka_hotel/graduate-evanston-exterior.jpg" loading="lazy" alt="Graduate Evanston at dusk, its porch lit beneath the trees" />
+										<span class="live">Live</span>
+										<span class="badge"><img src="images/Tuka_hotel/graduate-evanston-logo.png" alt="Graduate Evanston" /></span>
+										<h4>Graduate Evanston</h4>
+										<p>A historic hotel a short walk from Northwestern University. Evanston.</p>
+									</div>
+								</div>
+
+								<!-- Origin -->
+								<div class="pf-origin">
+									<div>
+										<span class="pf-eyebrow" style="color: var(--gold-l);">Where it started</span>
+										<h4>The original Tuka app</h4>
+										<p>Making information-seeking simple, not convoluted with ads and marketing. Still available on the App Store.</p>
+										<div class="pf-actions">
+											<a class="pf-btn light" href="https://apps.apple.com/us/app/tuka/id6753150548">Download on the App Store <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+											<a class="pf-btn light" href="https://substack.com/@tukaapp">Stay connected <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+										</div>
+									</div>
+									<div class="strip" aria-hidden="false">
+										<img src="images/Tuka_images/welcome.jpg" loading="lazy" alt="Original Tuka app: welcome screen" />
+										<img src="images/Tuka_images/searcb.jpg" loading="lazy" alt="Original Tuka app: search" />
+										<img src="images/Tuka_images/maps.jpg" loading="lazy" alt="Original Tuka app: maps" />
+									</div>
+								</div>
+							</article>
+
+							<!-- Juni + Backrs -->
+							<div class="pf-roles">
+								<article id="juni" class="pf-card pf-role pf-reveal">
+									<div class="pf-role-top">
+										<img class="pf-role-logo" src="images/juni_learning.png" alt="Juni Learning" />
+										<div>
+											<h3>Juni Learning</h3>
+											<div class="title">Computer Science Instructor</div>
+										</div>
+									</div>
+									<span class="pf-pill">Oct 2023 &ndash; Mar 2025</span>
+									<p>Taught 20+ students algorithms, data structures and Python game programming with PyGame, from foundational sorting to building interactive 2D games from scratch.</p>
+								</article>
+								<article id="backrs" class="pf-card pf-role pf-reveal">
+									<div class="pf-role-top">
+										<img class="pf-role-logo" src="images/backrs_logo.png" alt="Backrs" />
+										<div>
+											<h3>Backrs</h3>
+											<div class="title">QA Intern &amp; Coach</div>
+										</div>
+									</div>
+									<span class="pf-pill">QA Intern Nov 2022 &ndash; Feb 2023 &middot; Coach, current</span>
+									<p>Developed and executed unit tests to ensure software quality, and now guides students through the college and graduate application process.</p>
+								</article>
 							</div>
-							-->
+						</div>
+					</section>
+
+				<!-- Research -->
+					<section id="two" class="pf-sec" style="background: var(--paper-2);">
+						<div class="pf-wrap">
+							<div class="pf-sec-head pf-reveal"><span class="num">02</span><h2>Research</h2></div>
+
+							<!-- Publication -->
+							<article id="chi" class="pf-chi pf-reveal">
+								<div class="pf-chi-grid">
+									<div class="pf-chi-emblem" aria-hidden="true"><b>CHI</b><small>2026</small></div>
+									<div>
+										<span class="award">&#9733; Best Paper Honourable Mention &middot; top 5%</span>
+										<h3>&ldquo;It's trained by non-disabled people&rdquo;: Evaluating How Image Quality Affects Product Captioning with Vision-Language Models</h3>
+										<p><span class="venue">ACM CHI 2026</span> &mdash; CHI is the premier conference for Human-Computer Interaction. The award places the paper in the top 5% of accepted papers.</p>
+										<div class="pf-actions">
+											<a class="pf-btn gold" href="https://arxiv.org/abs/2511.08917">Read the paper <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<!-- BLVSPs -->
+							<article class="pf-study pf-reveal">
+								<div class="pf-study-head">
+									<div>
+										<span class="pf-eyebrow">Design research</span>
+										<h3>A community for <em>blind and low-vision</em> software professionals</h3>
+									</div>
+									<p>In previous research, blind and low-vision software professionals (BLVSPs) expressed distress at the lack of a centralized community for sharing and discovering DIY tools, tips and tricks for more accessible software development. My team and I surveyed them and designed this platform around their considerations.</p>
+								</div>
+								<div class="pf-frame">
+									<div class="bar"><i></i><i></i><i></i><span>BLVSPs wireframe &middot; interactive Figma prototype</span></div>
+									<iframe loading="lazy" title="BLVSPs community interactive Figma prototype" src="https://embed.figma.com/proto/6Sc3vnsJMs1a1FQKiiNjpz/BLVSPs-Wireframe?node-id=996726-1950&node-type=canvas&scaling=scale-down&content-scaling=fixed&page-id=996259%3A239&starting-point-node-id=996726%3A1950&share=1&embed-host=share" allowfullscreen></iframe>
+								</div>
+								<div class="pf-shots">
+									<figure><img src="images/engagement.png" loading="lazy" alt="Engagement view of the BLVSPs community platform" /><figcaption>Engagement</figcaption></figure>
+									<figure><img src="images/Profile Page.png" loading="lazy" alt="Profile page of the BLVSPs community platform" /><figcaption>Profile</figcaption></figure>
+									<figure><img src="images/CommentsPage.png" loading="lazy" alt="Chat interface attached to each DIY tool post" /><figcaption>Chat on every DIY tool</figcaption></figure>
+								</div>
+								<div class="pf-study-body">
+									<p>Users indicated a desire for community, hence our high-fidelity design of a chat interface for each DIY tool posted.</p>
+									<p>We are currently in the prototyping cycle and iterating based on user feedback. Come back later for more pages.</p>
+								</div>
+							</article>
+
+							<!-- Smaller research -->
+							<div class="pf-minis">
+								<article class="pf-card pf-mini pf-reveal">
+									<div class="thumb"><img src="images/SlackA11ly.png" loading="lazy" alt="SlackA11y research prototype" /></div>
+									<span class="pf-pill" style="align-self:flex-start;">Ongoing</span>
+									<h3>SlackA11y</h3>
+									<p>Researching sonification and end-user scripting to make sense-making within chat applications, in this case Slack, more effective for blind users.</p>
+									<div class="pf-actions"><a class="pf-btn ghost" href="https://github.com/Accessibility-Research-Collective-UCI/slacka11ly">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+								</article>
+								<article class="pf-card pf-mini pf-reveal">
+									<div class="thumb"><img src="images/EEG_Sensor_Data.jpeg" loading="lazy" alt="EEG and physiological signal visualisation" /></div>
+									<span class="pf-pill" style="align-self:flex-start;">HABits Lab</span>
+									<h3>Sensing eating behavior</h3>
+									<p>Researched how eating behaviors can be predicted from sensor data. Used Python to process and visualise EEG and physiological signals with MNE-Python and EEGLAB, surfacing patterns that link sensor readings to real-world behavior.</p>
+								</article>
+							</div>
+
+							<!-- Writing -->
+							<article class="pf-card pf-write pf-reveal">
+								<div>
+									<span class="pf-eyebrow">Writing</span>
+									<h3>Hold the Code</h3>
+									<p>Writing about technology, accessibility, and the humans behind it all.</p>
+								</div>
+								<a class="pf-btn" href="https://substack.com/@dwaynemorgan275314">Read on Substack <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+							</article>
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="three" class="pf-contact">
+						<div class="pf-wrap">
+							<span class="pf-eyebrow">03 &mdash; Contact</span>
+							<h2>Let's <em>talk.</em></h2>
+							<p>Feel free to reach out with any comments or suggestions.</p>
+							<a class="pf-mail" href="mailto:dwaynem@uci.edu">dwaynem@uci.edu</a>
+
+							<div class="pf-contact-row">
+								<div><div class="lbl">Phone</div><span class="v">(901) 485-7771</span></div>
+								<div>
+									<div class="lbl">Elsewhere</div>
+									<div class="pf-social" style="margin-top:0;">
+										<a href="https://github.com/1Iconic1" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+										<a href="https://www.linkedin.com/in/dwayne-morgan-256267214/" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+							<p class="pf-foot">&copy; <span id="yr">2026</span> Dwayne Morgan</p>
 						</div>
 					</section>
 
 			</div>
 
-		
-
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -449,52 +585,21 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-	
-		<script>
-			(function () {
-				const imgs = document.querySelectorAll('.tuka-strip img');
-				if (!imgs.length) return;
-				const observer = new IntersectionObserver((entries) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							const i = Array.from(imgs).indexOf(entry.target);
-							setTimeout(() => entry.target.classList.add('tuka-visible'), i * 100);
-							observer.unobserve(entry.target);
-						}
-					});
-				}, { threshold: 0.15 });
-				imgs.forEach(img => observer.observe(img));
-			})();
-		</script>
-	</body>
-</html>
-		
 
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-	
-		<script>
-			(function () {
-				const imgs = document.querySelectorAll('.tuka-strip img');
-				if (!imgs.length) return;
-				const observer = new IntersectionObserver((entries) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							const i = Array.from(imgs).indexOf(entry.target);
-							setTimeout(() => entry.target.classList.add('tuka-visible'), i * 100);
-							observer.unobserve(entry.target);
-						}
-					});
-				}, { threshold: 0.15 });
-				imgs.forEach(img => observer.observe(img));
-			})();
-		</script>
+			<script>
+				(function () {
+					var y = document.getElementById('yr'); if (y) y.textContent = new Date().getFullYear();
+					var els = document.querySelectorAll('.pf-reveal');
+					if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+					var io = new IntersectionObserver(function (entries) {
+						entries.forEach(function (en) {
+							if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+						});
+					}, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+					els.forEach(function (e) { io.observe(e); });
+					// Safety net: never leave content hidden.
+					setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 6000);
+				})();
+			</script>
 	</body>
 </html>
